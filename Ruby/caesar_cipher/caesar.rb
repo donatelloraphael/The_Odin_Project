@@ -1,4 +1,7 @@
 def caesar_cipher(string, shift_factor)
+	if shift_factor > 26
+		shift_factor = shift_factor % 26
+	end
 	split_string = string.split("")
 	split_string.map! do |char|
 		char = shift(char, shift_factor)
@@ -26,4 +29,8 @@ def shift(char, shift_factor)
 	end
 end
 
-puts caesar_cipher("What a string!", 5)
+puts "Enter a string to convert to Caeser's cypher:"
+string = gets.chomp
+puts "Enter the shift value:"
+shift_factor = gets.chomp.to_i
+puts caesar_cipher(string, shift_factor)
