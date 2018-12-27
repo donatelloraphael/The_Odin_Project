@@ -3,7 +3,7 @@ def caesar_cipher(string, shift_factor)
 	split_string.map! do |char|
 		char = shift(char, shift_factor)
 	end	
-	return split_string.join("").to_s	
+	return split_string.join("")
 end
 
 def shift(char, shift_factor)
@@ -25,3 +25,5 @@ def shift(char, shift_factor)
 		return char		
 	end
 end
+
+puts caesar_cipher("What a string!", 5)
